@@ -11,6 +11,8 @@ namespace Intro_To_Methods_Programming_Assignment
         static void Main(string[] args)
         {
             DrawSW();
+            DrawComputer();
+            DrawMouse();
             Console.ReadLine();
         }
         public static void DrawSW()
@@ -65,6 +67,21 @@ namespace Intro_To_Methods_Programming_Assignment
         {
             Console.WriteLine("         _______");
             Console.WriteLine("        |.-----.|");
+            Console.WriteLine("        ||x . x||");
+            Console.WriteLine("        ||_.-._||");
+            Console.WriteLine("        `--)-(--`");
+            Console.WriteLine("       __[=== o]___");
+            Console.WriteLine("      |:::::::::::|/");
+            Console.WriteLine("      `-=========-`()");
+        }
+        public static void DrawMouse()
+        {
+            Console.WriteLine("   /");
+            Console.WriteLine(" __|_");
+            Console.WriteLine("|____|");
+            Console.WriteLine("|    |");
+            Console.WriteLine("|    |");
+            Console.WriteLine("|____/");
         }
     }
 }
