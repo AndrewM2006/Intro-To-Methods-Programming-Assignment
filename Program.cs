@@ -63,7 +63,8 @@ namespace Intro_To_Methods_Programming_Assignment
         }
         public static void DrawComputer()
         {
-            Console.WriteLine("");
+            Console.WriteLine("         _______");
+            Console.WriteLine("        |.-----.|");
         }
     }
 }
