@@ -10,9 +10,39 @@ namespace Intro_To_Methods_Programming_Assignment
     {
         static void Main(string[] args)
         {
-            DrawSW();
-            DrawComputer();
-            DrawMouse();
+            int menuOption;
+            Console.SetWindowSize(120, 60);
+            Console.WriteLine("Press 1 for Star Wars, 2 for a computer, 3 for a computer mouse or 4 for a joke!");
+            while (true)
+            {
+                if (int.TryParse(Console.ReadLine(), out menuOption))
+                {
+                    if (menuOption == 1)
+                    {
+                        DrawSW();
+                    }
+                    else if (menuOption == 2)
+                    {
+                        DrawComputer();
+                    }
+                    else if (menuOption == 3)
+                    {
+                        DrawMouse(1, 1, false);
+                    }
+                    else if (menuOption == 4)
+                    {
+                        Joke();
+                    }
+                    else
+                    {
+                        Console.WriteLine("Press 1 for Star Wars, 2 for a computer, 3 for a computer mouse or 4 for a joke!");
+                    }
+                }
+                else
+                {
+                    Console.WriteLine("Press 1 for Star Wars, 2 for a computer, 3 for a computer mouse or 4 for a joke!");
+                }
+            }
             Console.ReadLine();
         }
         public static void DrawSW()
@@ -74,14 +104,50 @@ namespace Intro_To_Methods_Programming_Assignment
             Console.WriteLine("      |:::::::::::|/");
             Console.WriteLine("      `-=========-`()");
         }
-        public static void DrawMouse()
+        public static void DrawMouse(int xValue, int yValue, bool valid=false)
         {
+            Console.WriteLine("Enter an X and Y value:");
+            while (valid == false)
+            {
+                if (int.TryParse(Console.ReadLine(), out xValue)&& xValue>=0&&xValue<=114)
+                {
+                    valid = true;
+                }
+                else
+                {
+                    Console.WriteLine("Enter a Valid Value");
+                }
+            }
+            valid = false;
+            while (valid == false)
+            {
+                if (int.TryParse(Console.ReadLine(), out yValue) && yValue >= 0 && yValue <= 60)
+                {
+                    valid = true;
+                }
+                else
+                {
+                    Console.WriteLine("Enter a Valid Value");
+                }
+            }
+            Console.SetCursorPosition(xValue, yValue);
             Console.WriteLine("   /");
+            Console.SetCursorPosition(xValue, yValue+1);
             Console.WriteLine(" __|_");
+            Console.SetCursorPosition(xValue, yValue+2);
             Console.WriteLine("|____|");
+            Console.SetCursorPosition(xValue, yValue+3);
             Console.WriteLine("|    |");
+            Console.SetCursorPosition(xValue, yValue+4);
             Console.WriteLine("|    |");
+            Console.SetCursorPosition(xValue, yValue+5);
             Console.WriteLine("|____/");
+        }
+        public static void Joke()
+        {
+            Console.WriteLine("Why do Java Programmers always need glasses?");
+            Console.ReadLine();
+            Console.WriteLine("Because they don't C#");
         }
     }
 }
