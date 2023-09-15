@@ -12,7 +12,7 @@ namespace Intro_To_Methods_Programming_Assignment
         {
             int menuOption;
             Console.SetWindowSize(120, 60);
-            Console.WriteLine("Press 1 for Star Wars, 2 for a computer, 3 for a computer mouse or 4 for a joke!");
+            Console.WriteLine("Press 1 for Star Wars, 2 for a computer, 3 for a computer mouse, 4 for a joke, or 5 for a knock knock joke!");
             while (true)
             {
                 if (int.TryParse(Console.ReadLine(), out menuOption))
@@ -33,6 +33,10 @@ namespace Intro_To_Methods_Programming_Assignment
                     {
                         Joke();
                     }
+                    else if (menuOption == 5)
+                    {
+                        KnockKnock();
+                    }
                     else
                     {
                         Console.WriteLine("Press 1 for Star Wars, 2 for a computer, 3 for a computer mouse or 4 for a joke!");
@@ -47,6 +51,7 @@ namespace Intro_To_Methods_Programming_Assignment
         }
         public static void DrawSW()
         {
+            Console.Clear();
             Console.Write("               ________");
             Console.WriteLine("\t\t\t\t       ________________");
             Console.Write("          _,.-Y  |  |  Y-._");
@@ -95,6 +100,7 @@ namespace Intro_To_Methods_Programming_Assignment
         }
         public static void DrawComputer()
         {
+            Console.Clear();
             Console.WriteLine("         _______");
             Console.WriteLine("        |.-----.|");
             Console.WriteLine("        ||x . x||");
@@ -106,6 +112,7 @@ namespace Intro_To_Methods_Programming_Assignment
         }
         public static void DrawMouse(int xValue, int yValue, bool valid=false)
         {
+            Console.Clear();
             Console.WriteLine("Enter an X and Y value:");
             while (valid == false)
             {
@@ -148,6 +155,19 @@ namespace Intro_To_Methods_Programming_Assignment
             Console.WriteLine("Why do Java Programmers always need glasses?");
             Console.ReadLine();
             Console.WriteLine("Because they don't C#");
+        }
+        public static void KnockKnock()
+        {
+            Console.Clear();
+            Console.WriteLine("Knock Knock");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Who's There?");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Kenya");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Kenya Who?");
+            System.Threading.Thread.Sleep(1000);
+            Console.WriteLine("Kenya Open The Door Please?");
         }
     }
 }
